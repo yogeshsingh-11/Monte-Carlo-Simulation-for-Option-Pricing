@@ -1,8 +1,15 @@
 import numpy as np
+from scipy.stats import norm
 
 def black_scholes_call(S0, K, T, r, sigma):
     """
     Black-Scholes formula for a European call option price.
+    
+    S0: Initial stock price
+    K: Strike price
+    T: Time to maturity (in years)
+    r: Risk-free interest rate
+    sigma: Volatility of the stock
     return: Call option price
     """
     d1 = (np.log(S0 / K) + (r + 0.5 * sigma ** 2) * T) / (sigma * np.sqrt(T))
